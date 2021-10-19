@@ -39,6 +39,7 @@ php artisan optimize:clear
 
 ## Endpoint: /api/check_subject
 data/parameters:{
+    
     hsc_math [datatype: boolean(0/1), required],
 
     hsc_biology [datatype: boolean(0/1), required],
@@ -48,7 +49,7 @@ data/parameters:{
     physics_score [datatype: numeric(0,1,2,3....), required],
 
     chemistry_score [datatype: numeric(0,1,2,3....), required],
-    
+
     biology_score [datatype: numeric(0,1,2,3....), required]
 }
 
