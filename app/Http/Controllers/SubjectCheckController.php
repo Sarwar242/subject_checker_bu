@@ -62,18 +62,12 @@ class SubjectCheckController extends Controller
                 'message' => 'An error occured \n'.$exception
             ], 200);
         }
-        if(count($request['subjects'])==0){
+        if(is_null($request['subjects'])){
             return response()->json([
                 'success' => false,
                 'message' => "Eligible for no subject, Sorry. Better luck next time!",
             ], 200);
         }
-        // if (count($request['subjects'])==1) {
-        //     return response()->json([
-        //         'success' => true,
-        //         'subjects' => $request['subjects'],
-        //     ], 200);
-        // }
 
         return response()->json([
             'success' => true,
