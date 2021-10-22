@@ -23,10 +23,10 @@ class SubjectCheckController extends Controller
         $validator = Validator::make($request->all(),[
             'hsc_math' => 'required|boolean',
             'hsc_biology' => 'required|boolean',
-            'math_score' => 'required|numeric',
-            'physics_score' => 'required|numeric',
-            'chemistry_score' => 'required|numeric',
-            'biology_score' => 'required|numeric',
+            'math_score' => 'required|numeric|min:-5|max:15',
+            'physics_score' => 'required|numeric|min:-5|max:15',
+            'chemistry_score' => 'required|numeric|min:-5|max:15',
+            'biology_score' => 'required|numeric|min:-5|max:15',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
